@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h2 id="main">change text</h2>
+      <p id="textPara">MY FIRST JS CODE</p>
+      <button onclick="changeText()">Change Text</button>
+
+      <h2 id="main2">change backgroundColor</h2>
+      <button onclick="changeBgColor()">Set Background Blue</button>
+
+      <h2>Toggle Visibility</h2>
+  <p id="togglePara">The oldest classical British and Latin writings had little or no space between words and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized. Word dividers and terminal punctuation became common. The first way to divide sentences into groups was the original paragraphos, similar to an underscore at the beginning of the new group.[1] The Greek parágraphos evolved into the pilcrow (¶), which in English manuscripts in the Middle Ages can be seen inserted inline between sentences. .</p>
+  <button onclick="toggleVisibility()">Hide/Show Paragraph</button>
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <button onclick="addListItem()">Add Item</button>
+  
+  <ul id="removeList">
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+    <li>fourth</li>
+    <li>fifth</li>
+  </ul>
+  <button onclick="removeLastItem()">Remove Last Item</button>
+
+  <img id="showselfie" src="./1000058184.jpg" alt="showselfie" width="150">
+  <br>
+  <button onclick="showwaterfall()">show waterfall</button>
+  <button onclick="showselfie()">Show selfie</button>
+
+  <input type="text" id="inputBox" placeholder="typesomething">
+  <button onclick="updateParagraph()">Update</button>
+  <p id="show upadated message"></p>
+
+  <button onclick="countClicks()">Click here</button>
+  <span id="clickCount">0</span>
+
+  <p id="sizePara">Change my font size!</p>
+  <button onclick="increaseFontSize()">increase Font Size</button>
+
+  <form id="simpleForm" onsubmit="return validateform()">
+    Name:<input type="text" id="name"><br>
+    Id:<input type="id" id="id"><br>
+    Email:<input type="email" id="email"><br>
+    <button type="submit">Submit</button>
+</body>
+
+<script>
+  function changeText() {
+      document.getElementById('textPara').innerText = "Hello JavaScript!";
+    }
+    function changeBgColor() {
+      document.body.style.backgroundColor = "blue";
+    }
+    function toggleVisibility() {
+        var para = document.getElementById('togglePara');
+         if (para.style.display === "none") {
+        para.style.display = "block";
+      } else {
+        para.style.display = "none";
+      }
+    }
+
+    function addListItem() {
+      const ul = document.getElementById("myList")
+      const li = document.createElement("li")
+      li.textContent = "New Item";
+      ul.appendChild(li);
+    }
+
+    function removeLastItem() {
+      const ul = document.getElementById("removeList");
+      if(ul.lastElementChild){
+        ul.lastElementChild.remove();
+      }
+    }
+
+    function showwaterfall() {
+      document.getElementById("showselfie").src="./1000058184.jpg";
+    }
+    function showselfie() {
+      document.getElementById("showselfie").src="./waterfall picture.jpg";
+    }
+
+    function updateParagraph() {
+      const value = document.getElementById("inputBox").value;
+      document.getElementById("show upadated message").textContent = value;
+    }
+
+    let count = 0;
+     function countClicks() {
+     count++;
+     document.getElementById("clickCount").innerText = count;
+     }
+
+    let fontSize = 12;
+    function increaseFontSize() {
+      fontSize += 2;
+      document.getElementById("sizePara").style.fontSize = fontSize + "px";
+    }
+
+    function validateForm() {
+      const name = document.getElementById("name").value;
+      const id = document.getElementById("id").value;
+      const email = document.getElementById("email").value;
+      if(name ==="" || id ==="" || email ===""){
+        alert("All fields are requierd.");
+        return false;
+      }
+      return true;
+    }
+</script>
+</html>

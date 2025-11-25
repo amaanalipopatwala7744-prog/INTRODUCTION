@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">hello</h1>
+    <button onclick="show(4,3)">click</button>
+    <h2 id="main">even</h2>
+    <button onclick="document.getElementById('main').innerHTML=even(11)">check even odd</button>
+    <h2 id="main2">reverse string</h2>
+    <button onclick="document.getElementById('main2').innerHTML=reverseString('Mazahir')">reverse string</button>
+    <h3 id ="demo2">factorial function</h3>
+    <button onclick="document.getElementById('demo2').innerHTML=factorial('9')">factorial</button>
+    <h4 id="largest">largest number</h4>
+    <button onclick="document.getElementById('largest').innerHTML=findlargest([7,5,9,99,999,20])">find largest</button>
+    <h5 id="countvowels">count vowels</h5>
+    <button onclick="document.getElementById('countvowels').innerHTML=countvowels('euthopia')">count vowels</button>
+    <h6 id="palindrome">palindrome</h6>
+    <button onclick="document.getElementById('palindrome').innerHTML=palindrome('sir')">check palindrome</button>
+    <h6 id="celsius">celsius to fahrenheit</h6>
+    <button onclick="document.getElementById('celsius').innerHTML=celsicusToFahrenheit(40)">convert</button>
+    <h6 id="anagram">anagram</h6>
+    <button onclick="document.getElementById('anagram').innerHTML=areAnagrams('talk','speak')">check anagram</button>
+    <h6 id="removeduplicates">remove duplicates</h6>
+    <button onclick="document.getElementById('removeduplicates').innerHTML=removeDuplicates([1,2,4,5,7,7,7,6,3])">remove duplicates</button>
+
+<script>
+     function show(a,b) {
+        document.getElementById("demo").innerHTML = a*b;
+     }
+     
+     function even(num) {
+        if(num % 2 == 0) {
+            return "even";
+        } else {
+            return "odd";
+        }
+     }
+     
+     function reverseString(str) {
+        return str.split("").reverse().join("");
+     }
+        function factorial(n) {
+            if (n === 0 || n === 1)
+                return 1;
+            for (var i = n - 1; i >= 1; i--) {
+                n = n * i;
+            }
+            return n;
+        }
+
+        function findlargest(arr){
+            let largest = arr[1];
+            for(let i=0;i<arr.length;i++){
+                if(largest < arr[i]){
+                    largest = arr[i];
+                
+                }
+            }
+            return largest;
+        }
+
+        function countvowels(str){
+            let count =0;
+            let vowels = ['a','e','i','o','u']
+            for(let i=0;i<str.length;i++){
+                if(vowels.includes(str[i].toLowerCase())){
+                    count ++;
+            }
+        }
+        return count;
+        }
+
+        function palindrome(str){
+            let reversed = str.split("").reverse().join("");
+            if(str === reversed){
+                return "palindrome";
+            } else {
+                return "not a palindrome";
+            }
+        }
+        
+
+        function celsicusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+
+        function areAnagrams(str1, str2) {
+            const sortedStr1 = str1.split('').sort().join('');
+            const sortedStr2 = str2.split('').sort().join('');
+            return sortedStr1 === sortedStr2;
+        }
+
+        function removeDuplicates(arr) {
+            return [...new Set(arr)];
+        }
+    //const show = (a,b)=>{
+      //   document.getElementById("demo").innerHTML = a*b;
+    //}
+</script>
+</html>

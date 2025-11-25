@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>update biodata task</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; }
+    #profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+    .biodata-entry { margin-bottom: 10px; }
+    label { display: inline-block; width: 100px; }
+  </style>
+</head>
+<body>
+
+  <h2>My Biodata</h2>
+  <img id="profile-img" src="../Black Gold Luxury Elegant Jewelry Logo.png" alt="Profile Picture"><br><br>
+  <button onclick="changeImage()">Change Profile Picture</button>
+
+  <div id="biodata-form">
+    <div class="biodata-entry"><label>Name:</label>    <input type="text" id="name"></div>
+    <div class="biodata-entry"><label>Address:</label> <input type="text" id="address"></div>
+    <div class="biodata-entry"><label>Pincode:</label> <input type="text" id="pincode"></div>
+    <div class="biodata-entry"><label>State:</label>   <input type="text" id="state"></div>
+    <div class="biodata-entry"><label>City:</label>    <input type="text" id="city"></div>
+    <div class="biodata-entry"><label>Age:</label>     <input type="number" id="age"></div>
+    <div class="biodata-entry"><label>DOB:</label>     <input type="date" id="dob"></div>
+    <button onclick="saveDetails()">Save Details</button>
+  </div>
+
+  <h3>Saved Details:</h3>
+  <ul id="details-list"></ul>
+
+</body>
+
+  <script>
+    function saveDetails() {
+      var name = document.getElementById('name').value;
+      var address = document.getElementById('address').value;
+      var pincode = document.getElementById('pincode').value;
+      var state = document.getElementById('state').value;
+      var city = document.getElementById('city').value;
+      var age = document.getElementById('age').value;
+      var dob = document.getElementById('dob').value;
+
+      var detailsHTML = `
+        <li><strong>Name:</strong> ${name}</li>
+        <li><strong>Address:</strong> ${address}</li>
+        <li><strong>Pincode:</strong> ${pincode}</li>
+        <li><strong>State:</strong> ${state}</li>
+        <li><strong>City:</strong> ${city}</li>
+        <li><strong>Age:</strong> ${age}</li>
+        <li><strong>DOB:</strong> ${dob}</li>
+      `;
+      document.getElementById('details-list').innerHTML = detailsHTML;
+    }
+
+    function changeImage() {
+      document.getElementById('profile-img').src = "https://randomuser.me/api/portraits/women/44.jpg";
+    }
+  </script>
+</html>

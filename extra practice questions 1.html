@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    #Box{
+        width: 200px;
+        height: 200px;
+        background-color:red;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #Box img{
+        width: 100%;
+        height: 100%;
+        display: none;
+        object-fit: cover;
+    }
+
+    .circle{
+        border-radius: 50%;
+    }
+
+    button{
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="Box">
+        <img id="circleImage" src="./waterfall picture.jpg" alt="Image">
+    </div>
+   
+    <button onclick="convertShape()">Click here</button>
+</body>
+<script>
+    function convertShape(){
+        let box = document.getElementById("Box");
+        let img = document.getElementById("circleImage")
+
+        box.classList.add("circle");
+
+        img.style.display = "block";
+    }
+</script>
+</html>
