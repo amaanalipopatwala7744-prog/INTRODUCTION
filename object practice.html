@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const student ={
+        name: 'AMAANALI',
+        age : 21,
+        marks: 95,
+    }
+    document.write(student.name);
+    document.write(student.age);
+    document.write(student.marks);
+
+    const person={
+        name:'john',
+        age:25,
+        marks:90,
+    }
+   person.age=30;
+   
+   console.log("Updated age:", person.age);
+
+   const product=[
+    {name:'Laptop',price:15000,brand:'dell'},
+    {name:'phone',price:17000,brand:'iphone17promax'},
+    {name:'shoes',price:15000,brand:'Airjordan'},
+    {name:'watch',price:26000,brand:'apple'},
+    {name:'tablet',price:50000,brand:'samsung'},
+   ]
+    let maxPriceProduct = product[0];
+    for(let item of product){
+        if (item.price >maxPriceProduct.price){
+            maxPriceProduct = item;
+        }
+    }
+    console.log("product with higest price:", maxPriceProduct);
+
+    sumobjectvalues = (obj) =>{
+        let sum = 0;
+        for (let key in obj){
+            sum += obj[key];
+        }
+        return sum;
+    }
+    const myobject = {a:10, b:20, c:30};
+    console.log("sum of object values:",sumobjectvalues(myobject));
+
+    const array =[1,2,3,4,5,6,7,8,9,10];
+    function getEvenNumbers(arr){
+        return arr.filter(num => num % 2 ===0);
+    }
+    const evennumbers = getEvenNumbers(array);
+    console.log("even numbers:", evennumbers);
+
+    const obj={
+        name : 'Alice',
+        age : 28,
+        city : 'New York',
+    }
+
+    function keyexists(obj,key){
+        return object.hasownproperty(key);
+    }
+    console.log("Does 'age' exist?", keyExists(obj,"age"));
+    console.log("Does 'salary' exist?", keyExists(obj, "salary"));
+
+    conststudent=[
+        {name:'AMAANALI', age:21, marks:95},
+        {name:'john', age:22, marks:85},
+        {name:'emma', age:20, marks:90},
+        {name:'olivia', age:23, marks:88},
+        {name:'liam', age:21, marks:92},
+    ]
+    const highScorers = students.filter(student => student.marks >80);
+    highScorers.forEach(student => console.log(student.name));
+    
+    const fruits = ["apple", "banana", "grapes"];
+
+const fruitsObject = fruits.reduce((obj, item, index) => {
+  obj[index] = item;
+  return obj;
+}, {});
+
+console.log(fruitsObject);
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+
+const merged = Object.assign({}, obj1, obj2);
+
+console.log(merged); 
+
+function countOccurrences(arr) {
+  const countMap = {};
+  for (const word of arr) {
+    countMap[word] = (countMap[word] || 0) + 1;
+  }
+  return countMap;
+}
+const words = ["apple", "banana", "apple", "orange", "banana"];
+const result = countOccurrences(words);
+console.log(result);
+
+</script>
+</html>
