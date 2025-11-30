@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Down Header Color Change</title>
+<style>
+  body {
+margin: 0;
+font-family: Arial, sans-serif;
+  }
+ h1 {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 10px 0;
+background-color: transparent;
+transition: background-color 0.3s ease;
+z-index: 1000;
+  }
+  h2 {
+height: 4000px; 
+
+  }
+</style>
+</head>
+<body>
+
+  <h1 id="demo">Scroll Down to Change Header Color</h1>
+
+<h2></h2>
+<script>
+  window.addEventListener("scroll", show)
+
+
+  function show() {
+const header = document.getElementById('demo');
+if (window.scrollY > 200) {
+  header.style.backgroundColor = "RED"; 
+} 
+else{
+  header.style.backgroundColor = "BLACK"; 
+}
+  };
+</script>
+</body>
+</html>

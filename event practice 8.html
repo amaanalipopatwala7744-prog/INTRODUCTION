@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one-time button</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    h2{
+        color: white;
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+    .one-time-btn{
+        padding: 15px 35px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #ff6b6b, #feca57);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+    .one-time-btn:hover:not(:disabled){
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5);
+    }
+    .one-time-btn:disabled{
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h2>🛑 One-Time Click Button</h2>
+        <button class="one-time-btn" id="oneTimeBtn">Click Me Once! ✨</button>
+        <div class="status" id="statusMessage" style="margin-top:20px; color:white; font-weight:bold;"></div>
+    </div>
+</body>
+<script>
+    const button = document.getElementById('oneTimeBtn');
+    const statusMessage = document.getElementById('statusMessage');
+
+    button.addEventListener('click', function handleClick() {
+        statusMessage.textContent = "Button clicked! You can't click it again.";
+        button.disabled = true;
+        // Optionally, remove the event listener to ensure it can't be clicked again
+        button.removeEventListener('click', handleClick);
+    });
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-click Border change</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .clickable-div {
+        width: 300px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 5px solid #ff6b6b;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        user-select: none;
+    }
+    
+    .clickable-div:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+    }
+    
+    .clickable-div.blue-border {
+        border-color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
+        box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+    }
+    
+    .clickable-div.green-border {
+        border-color: #2196F3;
+        background: rgba(33, 150, 243, 0.1);
+        box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+    }
+    
+    .status {
+        margin-top: 25px;
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="clickable-div" id="clickableDiv">
+        Double-click me! 👆
+    </div>
+    <div class="status" id="statusText">Double-click the box above to change border color!</div>
+
+</body>
+<script>
+   const div = document.getElementById('clickableDiv');
+        const status = document.getElementById('status');
+        let clickCount = 0;
+        
+        div.addEventListener('dblclick', function() {
+            clickCount++;
+            
+            if (clickCount % 3 === 1) {
+                this.classList.remove('blue-border', 'green-border');
+                this.classList.add('blue-border');
+                status.textContent = 'Border changed to BLUE! 🔵 Double-click again!';
+            } else if (clickCount % 3 === 2) {
+                this.classList.remove('blue-border', 'green-border');
+                this.classList.add('green-border');
+                status.textContent = 'Border changed to GREEN! 🟢 Double-click again!';
+            } else {
+                this.classList.remove('blue-border', 'green-border');
+                status.textContent = 'Back to RED! ❤️ Double-click for next color!';
+            }
+        });
+</script>
+</html>

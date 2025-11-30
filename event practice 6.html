@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown selection display</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+    .conatiner{
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 400px;
+    }
+    h2{
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+    select{
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        box-sizing: border-box;
+    }
+    select:focus{
+        outline: none;
+        border-color: #fff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+    }
+    .display-para{
+        margin-top: 30px;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+</style>
+<body>
+    <div class="container">
+       <h2> 🎯 Select your Favourite Colour:</h2>
+       <select id="colorSelect">
+       <option value="" disabled selected>Choose a color....</option>
+       <option value="Red">🔴Red</option>
+       <option value="Green">🟢Green</option>
+       <option value="Blue">🔵Blue</option>
+       <option value="Yellow">🟡Yellow</option>
+       <option value="Purple">🟣Purple</option>
+       </select> 
+        <p class="display-para" id="displayText">Select a color from the dropdown list</p>
+    </div>
+</body>
+<script>
+    const colorSelect = document.getElementById('colorSelect');
+    const displayPara = document.getElementById('displayText');
+
+    colorSelect.addEventListener('change', function() {
+        if(this.value){
+            displayPara.textContent=`You selected: ${this.value} ✨`;
+        }else{
+            displayPara.textContent="Select a color from the dropdown list";
+        }
+    });
+</script>
+</html>
