@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function countdownToDate(targetDateStr) {
+    const targetDate = new Date(targetDateStr);
+    const now = new Date();
+    const diffMs = targetDate - now;
+    
+    if (diffMs <= 0) {
+        return 'The date has passed!';
+    }
+    
+    const daysLeft = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    return `${daysLeft} days left until ${targetDate.toDateString()}`;
+}
+
+document.body.innerHTML = countdownToDate('2025-12-31');
+
+</script>
+</html>

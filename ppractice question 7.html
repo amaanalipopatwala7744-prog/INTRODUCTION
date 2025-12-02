@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    const date1 = new Date('2025-12-01');
+const date2 = new Date('2025-12-15');
+const isDate1Greater = date1 > date2;
+document.getElementById("demo").innerText = `Date1: ${date1.toDateString()}, Date2: ${date2.toDateString()}`;
+alert(`Date1: ${date1.toDateString()}, Date2: ${date2.toDateString()}`);
+
+const date1Time = date1.getTime();
+const date2Time = date2.getTime();
+document.getElementById("demo").innerText = `Date1 > Date2: ${isDate1Greater}`;
+alert(`Date1 > Date2: ${isDate1Greater}`);
+</script>
+</html>

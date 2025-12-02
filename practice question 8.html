@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add 5 Days</title></head>
+<body>
+    <h3>Class Reminder</h3>
+    <p>Today: <span id="today"></span></p>
+    <p>Due in 5 days: <span id="future"></span></p>
+    <script>
+        const now = new Date();
+        document.getElementById('today').textContent = now.toLocaleDateString();
+        
+        const future = new Date(now);
+        future.setDate(now.getDate() + 5);
+        document.getElementById('future').textContent = future.toLocaleDateString();
+    </script>
+</body>
+</html>

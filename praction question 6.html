@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const now = new Date();
+const today = now.getDate();
+const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+const daysLeft = lastDayOfMonth - today + 1; // +1 includes today
+document.body.innerHTML = `Days left in ${now.toLocaleDateString('en-US', { month: 'long' })}: ${daysLeft}`;
+</script>
+</html>
