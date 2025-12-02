@@ -6,14 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo"></p>
+    
 </body>
 <script>
-    const students = ['Ali', 'Sara', 'Omar'];
-students.push('Alisha'); 
-document.getElementById("demo").innerHTML = students;
-const removed = students.pop();  
-alert(removed);
-document.getElementById("demo").innerHTML = students;
+const nums = [10, 25, 30, 5, 50, 15, 20];
+document.write("Array elements:<br>");
+for (let i = 0; i < nums.length; i++) {
+  document.write(nums[i] + "<br>");
+    alert(nums[i]);
+}
+
+let sum = 0;
+for (let i = 0; i < nums.length; i++) {
+  sum += nums[i];
+}
+document.write("Sum: " + sum + "<br>");  
+alert("Sum: " + sum);
+
+let countGreater25 = 0;
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] > 25) {
+    countGreater25++;
+  }
+}
+document.write("Numbers > 25: " + countGreater25 + "<br>");  
+alert("Numbers greater than 25: " + countGreater25);
+
+let largest = nums[0];
+for (let i = 1; i < nums.length; i++) {
+  if (nums[i] > largest) {
+    largest = nums[i];
+  }
+}
+document.write("Largest: " + largest + "<br>");  
+alert("Largest number: " + largest);
 </script>
 </html>

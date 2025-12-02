@@ -6,18 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="daysLeft"></p>
+    
 </body>
 <script>
-const now = new Date();
-const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
-const monthIndex = now.getMonth();
-const today = now.getDate();
-const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
-const daysLeft = daysInMonth - today;
-document.getElementById("daysLeft").innerHTML = `Days left in ${monthNames[monthIndex]}: ${daysLeft}`;
+const numbers = [10, 30, 15, 45, 22, 67, 8, 35, 90, 12];
+
+document.write("Array elements:<br>");
+for (let i = 0; i < numbers.length; i++) {
+  document.write(numbers[i] + "<br>");
+}
+
+document.write("<br>Sum from 1 to 100: ");
+let sum = 0;
+for (let i = 1; i <= 100; i++) {
+  sum += i;
+}
+document.write(sum + "<br>"); 
+
+let countGreaterThan25 = 0;
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 25) {
+    countGreaterThan25++;
+  }
+}
+document.write("Numbers greater than 25: " + countGreaterThan25 + "<br>");  
+
 </script>
 </html>
