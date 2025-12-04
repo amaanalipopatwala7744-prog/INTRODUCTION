@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="main"></p>
+    <p id="demo"></p>
+</body>
+<script>
+    let text = "Is this all there is?";
+    let result1 = text.match(/[a-s]/g);
+    let text2 = "this is the classic!";
+    let result2 = text2.match(/[1-5]/g);
+    document.getElementById("main").innerHTML = result1;
+    document.getElementById("demo").innerHTML = result2;
+</script>
+</html>
